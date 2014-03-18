@@ -1,0 +1,48 @@
+<% provide(:title, 'Sign up') %>
+<div class="index_content loginPage">
+    <div class="loginForm">
+    <div class="login_area">
+      <div class="">
+        <h1 class="pageTitle ">Register</h1>
+      </div>
+
+    <%= form_for(@user) do |f| %>
+   <%= render 'shared/error_users' %>
+
+   <div class="fieldname">
+        <h1><%= f.label :name %></h1>
+        <div class="login_field"> 
+      <%= f.text_field :name, class:"nameField", value:"" %>
+    </div>
+  </div>
+
+  <div class="fieldname">
+        <h1><%= f.label :email %></h1>
+        <div class="login_field"> 
+      <%= f.text_field :email, class:"nameField", value:"" %>
+    </div>
+  </div>
+      <div class="clear"></div>
+  
+  <div class="fieldname">
+    <h1><%= f.label :password %></h1>
+       <div class="login_field"> 
+      <%= f.password_field :password, class:"nameField", value:"" %>
+    </div>
+  </div>
+      
+  <div class="fieldname">
+    <h1><%= f.label :password_confirmation, "Confirmation" %></h1>
+    <div class="login_field">
+          <%= f.password_field :password_confirmation, class:"nameField", value:"" %>
+    </div>
+      </div>
+    </div>
+
+  <div class="forgot_pwd">
+      <%= f.submit "Submit", class: "log" %>
+  </div> <div class="clear"></div>
+
+    <% end %>
+  </div>
+</div>

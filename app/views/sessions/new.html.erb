@@ -1,0 +1,28 @@
+<% provide(:title, "Sign in") %>
+<div class="index_content loginPage">
+      <div class="loginForm">
+        <div class="login_area">
+            <div class="">
+                <h1 class="pageTitle ">Login</h1>
+            </div>
+            
+    <%= form_for(:session, url: sessions_path) do |f| %>
+    <div class="login_field">
+        <%= f.text_field :email, class:'nameField', placeholder:"name@email.com" %>
+    </div>
+     <div class="clear"></div>
+    <div class="login_field pswrd">
+        <%= f.password_field :password, class:'nameField', placeholder:'password'  %>
+    </div>
+</div>
+
+    <div class="forgot_pwd">    
+        <%= link_to "Forgot Password", '#', class:'forgot' %>
+        <%= link_to "Register", signup_path, class:'reg' %>
+        <%= f.submit "Login", class:'log' %><% end %>
+    </div>
+<div class="clear"></div>
+      </div>
+  </div>
+  <div class="clear"></div>
+</div>

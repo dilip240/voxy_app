@@ -1,0 +1,43 @@
+
+<div class="index_content">
+	<div class="tabs">
+	  <ul class="tabmenu" > 
+		<li class="tab1"><%= link_to 'RECENT', root_path %></li>
+		<li class="tab1"><%= link_to 'TRENDING', trending_path %></li>
+
+		<li class="tab1 tab"><a href="#">?</a></li>
+	  </ul> 
+	  <div class="clear"></div>
+	</div>
+
+<div class="middle_body">
+  <div class="sectionOne">	
+<% @microposts.sort_by(&:comments_count).reverse.map do |micropost| %>		
+
+	<div class="text_area">
+		<p><%= micropost.post %></p>
+	</div>
+	<div class="like_area">
+		<div class="like">
+			<%= link_to image_tag('like.jpg'), '#' %>
+		</div>
+		<div class="comment">
+			<%= link_to image_tag('comment.png'), '#' %>
+		</div>
+	<div class="clear"></div>
+  </div>
+	
+		<p>Posted on: <%= micropost.created_at.to_formatted_s(:short) %>
+		<p>BY:  <%= micropost.user%>
+		<p>Comments(<%= micropost.comments.count %>)
+		<p>Likes(0)
+		<p><%= link_to 'View Post', micropost %><hr/>
+	
+				 <div class="clear"></div>
+<% end %>
+
+</div>
+
+<div class="center hero-unit">
+<%= will_paginate @microposts %>	
+</div>

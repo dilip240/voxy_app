@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="header">
+  <div class="logo">
+       <%= link_to "VOXY LABS", root_path, id: "logo" %>
+     </div>
+   
+  
+       <% if signed_in? %>
+    <%= flash= "Welcome "+ current_user.name %>
+    <% end %>
+    
+  <div class="header_btns">
+        <%= link_to "Post", post_path, class:'post' %>
+
+          <% if signed_in? %>
+              <%= link_to "Sign out", signout_path, method: "delete", class:'login'  %>
+          <% else %>
+              <%= link_to "Sign in", signin_path, class:'login' %>
+          <% end %>     
+
+  </div>
+  <div class="clear"></div>
+  </div>
+<div class="clear">
+</div>
+</header>

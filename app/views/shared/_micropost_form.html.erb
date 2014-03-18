@@ -1,0 +1,32 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+
+
+
+  <div class="index_content loginPage">
+	<div class="post_msg">
+		<div class="pic_section">
+			<div class="browseSection">
+				  
+				 <%= f.label :image %>
+				 
+
+
+				  <div class="clear"></div>
+			</div>
+		</div>
+		
+
+	<div class="msgSection">
+
+    		<%= f.text_area :post, placeholder: "Compose new micropost...", class:"message_area" %>
+	</div>
+	
+  <div class="submit_postPage">  
+  	<%= f.submit "Submit", class:'log'%>
+  </div>
+  
+<% end %>
+</div>
+

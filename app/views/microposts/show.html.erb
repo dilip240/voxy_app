@@ -1,0 +1,24 @@
+<% provide(:title, 'View Specific Post') %>
+
+<div class="middle_body">
+  <div class="sectionOne">
+    <div class="text_area">
+      <p><%= @micropost.post %></p>
+      <div class="num_of_data">
+      <div class="num_of_comments">
+      Comments(<%= @micropost.comments.count %>), Likes (0)</div>
+
+      <%= link_to image_tag('like.jpg'), '#' %>
+      <%= link_to image_tag('comment.png'), '#' %>
+
+<table border='1' align='center' width=70%><tr><th>Comments:</th>
+<tr><td><%= render @micropost.comments %></td></tr></table><br>
+
+<% if signed_in? %>
+<table border='1' align='center' width=70% ><tr><th>Add a comment:</th></tr>
+ <tr><td><%= render "shared/comment_form" %>
+</td></tr>
+</table>
+<% end %>
+
+
