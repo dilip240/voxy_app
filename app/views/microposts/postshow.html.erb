@@ -27,7 +27,7 @@
   </div>
 	
 		<p>Posted on: <%= micropost.created_at.to_formatted_s(:short) %>
-		<p>BY:  <%= micropost.user %>
+		<p>BY:  <%= micropost.user.name.inspect%>
 		<p>Comments(<%= micropost.comments.count %>)
 		<p>Likes(0)
 		<p><%= link_to 'View Post', micropost %><hr/>
